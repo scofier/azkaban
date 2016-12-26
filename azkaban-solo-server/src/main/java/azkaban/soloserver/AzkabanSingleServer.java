@@ -21,6 +21,7 @@ import org.apache.log4j.Logger;
 import azkaban.database.AzkabanDatabaseSetup;
 import azkaban.database.AzkabanDatabaseUpdater;
 import azkaban.execapp.AzkabanExecutorServer;
+import azkaban.executor.mail.TemplateMailCreator;
 import azkaban.server.AzkabanServer;
 import azkaban.webapp.AzkabanWebServer;
 import azkaban.utils.Props;
@@ -50,6 +51,8 @@ public class AzkabanSingleServer {
       AzkabanDatabaseUpdater.runDatabaseUpdater(props, scriptDir, updateDB);
     }
 
+    new TemplateMailCreator();
+    
     AzkabanWebServer.main(args);
     logger.info("Azkaban Web Server started...");
     AzkabanExecutorServer.main(args);

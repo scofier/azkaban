@@ -27,4 +27,18 @@ public class VelocityTemplateTestUtil {
     engine.mergeTemplate(TEMPLATE_BASE_DIR + templateName + ".vm", "UTF-8", context, stringWriter);
     return stringWriter.getBuffer().toString();
   }
+  
+  
+  
+  public static void main(String[] args) {
+	  StringWriter stringWriter = new StringWriter();
+	    VelocityEngine engine = new VelocityEngine();
+
+	    VelocityContext context = new VelocityContext();
+	    context.put("aaa", "aa----");
+
+	    engine.evaluate(context, stringWriter, "logtag", "<b>aaaa=${aaa}=aaa</b>");
+	    //engine.mergeTemplate(TEMPLATE_BASE_DIR + templateName + ".vm", "UTF-8", context, stringWriter);
+	    System.out.println( stringWriter.getBuffer().toString());
+  }
 }

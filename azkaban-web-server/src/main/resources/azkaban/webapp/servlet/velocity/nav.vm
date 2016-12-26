@@ -24,8 +24,8 @@
         <div class="navbar-header">
             <div class="navbar-logo">
                 <a href="${context}/">Azkaban</a>
-                <div class="navbar-version">
-                    ${version}
+                <div class="navbar-version" dis>
+                    
                 </div>
             </div>
 
